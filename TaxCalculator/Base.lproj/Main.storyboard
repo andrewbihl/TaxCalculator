@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cgC-CT-pRk">
+                                <rect key="frame" x="20" y="513" width="560" height="29"/>
+                                <segments>
+                                    <segment title="SF"/>
+                                    <segment title="CHI"/>
+                                    <segment title="NY"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ba0-cW-AhD">
+                                <rect key="frame" x="254" y="299" width="92" height="30"/>
+                                <state key="normal" title="Calculate Tax"/>
+                                <connections>
+                                    <action selector="onCalculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iSb-dI-DhH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4m-cg-Cng">
+                                <rect key="frame" x="239" y="406" width="121" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="NeA-D4-Ob7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytW-Kv-g1G">
+                                <rect key="frame" x="248.5" y="193" width="103.5" height="39.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
+                                <color key="textColor" red="0.083909653127193451" green="0.29266533255577087" blue="0.78102397918701172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46844028037867486" green="0.82101362179487181" blue="0.62868121363874119" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.083909653127193451" green="0.29266533255577087" blue="0.78102397918701172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cgC-CT-pRk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="27m-6X-qju"/>
+                            <constraint firstItem="cgC-CT-pRk" firstAttribute="top" secondItem="K4m-cg-Cng" secondAttribute="bottom" constant="77" id="5M0-2v-E8i"/>
+                            <constraint firstItem="cgC-CT-pRk" firstAttribute="centerX" secondItem="ytW-Kv-g1G" secondAttribute="centerX" id="BtX-pR-lsz"/>
+                            <constraint firstItem="cgC-CT-pRk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hjh-bL-0PE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cgC-CT-pRk" secondAttribute="bottom" constant="59" id="aip-ts-m66"/>
+                            <constraint firstItem="Ba0-cW-AhD" firstAttribute="centerX" secondItem="ytW-Kv-g1G" secondAttribute="centerX" id="eXG-io-CEt"/>
+                            <constraint firstItem="ytW-Kv-g1G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="173" id="irD-Ea-4ha"/>
+                            <constraint firstItem="cgC-CT-pRk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iwY-XG-7aq"/>
+                            <constraint firstItem="K4m-cg-Cng" firstAttribute="top" secondItem="Ba0-cW-AhD" secondAttribute="bottom" constant="77" id="j30-pT-BIx"/>
+                            <constraint firstItem="K4m-cg-Cng" firstAttribute="centerX" secondItem="ytW-Kv-g1G" secondAttribute="centerX" id="orh-9I-BAh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="priceTextField" destination="K4m-cg-Cng" id="vzd-pt-neK"/>
+                        <outlet property="resultLabel" destination="ytW-Kv-g1G" id="CIP-7Y-LCl"/>
+                        <outlet property="segmentedControl" destination="cgC-CT-pRk" id="Qk7-mv-wj1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="76" y="11"/>
         </scene>
     </scenes>
 </document>
